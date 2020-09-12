@@ -3,24 +3,29 @@ import { Layout } from 'antd';
 import { SiteMenu } from './SiteMenu';
 import { ContactSidebar } from './ContactSidebar';
 import { contacts, links, welcome, about, experience, ratings, skills, projects } from './common';
-import { WelcomeSection, AboutSection, SkillsSection, ProjectSection } from './sections';
-import { ExperienceSection } from './sections/ExperienceSection';
-import { ContactSection } from './sections/ContactSection';
+import {
+  AboutSection,
+  ContactSection,
+  ExperienceSection,
+  ProjectSection,
+  SkillsSection,
+  WelcomeSection,
+} from './sections';
 
 const App: FC = () => {
 
   const sectionList = links.map(({title, link}) => link);
   sectionList.push("#welcome");
-  const sectionReducer = (accumulator: {[key: string]: RefObject<HTMLDivElement>}, val: string) => {
+  const sectionReducer = (
+    accumulator: {[key: string]: RefObject<HTMLDivElement>}, val: string
+  ) => {
     accumulator[val] = createRef<HTMLDivElement>()
     return accumulator
   };
   const sectionRefMap = sectionList.reduce(sectionReducer, {});
 
   const scrollIntoView = (obj: {key: string}) => {
-    sectionRefMap[obj.key]!.current?.scrollIntoView({
-      behavior: "smooth",
-    });
+    sectionRefMap[obj.key]!.current?.scrollIntoView({behavior: "smooth"});
   }
 
   return (
