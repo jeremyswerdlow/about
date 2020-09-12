@@ -4,16 +4,18 @@ import { HomeOutlined } from "@ant-design/icons";
 
 type SiteMenuProps = {
   links: {title: string, link: string}[],
+  onSectionClick: (_: { item?: any, key: any, keyPath?: any, domEvent?: any }) => void,
 };
 
 export const SiteMenu: FC<SiteMenuProps> = (props) => {
   return (
     <Menu
       mode="horizontal"
+      onClick={props.onSectionClick}
       selectable={false}
       style={{fontFamily: "'Roboto'"}}
     >
-      <Menu.Item key="home" icon={ <HomeOutlined /> } >
+      <Menu.Item key="#welcome" icon={ <HomeOutlined /> } >
         Jeremy Swerdlow | Software Engineer
       </Menu.Item>
       {

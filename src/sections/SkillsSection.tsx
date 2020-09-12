@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { Ref, forwardRef } from "react";
 import { Section, SectionHeader, StyledParagraph } from "../common";
 import { Rate, Col, Row, Divider } from "antd";
 
@@ -14,10 +14,10 @@ type SkillsSectionProps = {
   },
 };
 
-export const SkillsSection: FC<SkillsSectionProps> = (props) => {
+export const SkillsSection = forwardRef((props: SkillsSectionProps, ref: Ref<HTMLDivElement>) => {
   return (
-    <Section>
-      <SectionHeader title={props.skills.header} num="03."/>
+    <Section ref={ref} style={{paddingTop: "100px"}} >
+      <SectionHeader title={props.skills.header} num="03." />
       {
         Object.entries(props.ratings).map(([skillGroup, groupRatings]) =>
         <div key={skillGroup}>
@@ -46,4 +46,4 @@ export const SkillsSection: FC<SkillsSectionProps> = (props) => {
       }
     </Section>
   );
-};
+});

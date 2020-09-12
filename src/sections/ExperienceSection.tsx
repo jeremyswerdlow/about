@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, forwardRef, Ref } from "react";
 import { Tabs, Row, Divider, Badge, List } from "antd";
 import { colors, SectionHeader, Section, StyledText, StyledParagraph } from "../common";
 
@@ -68,9 +68,9 @@ type ExperienceSectionProps = {
   }
 };
 
-export const ExperienceSection: FC<ExperienceSectionProps> = (props) => {
+export const ExperienceSection = forwardRef((props:ExperienceSectionProps, ref: Ref<HTMLDivElement>) => {
   return (
-    <Section>
+    <Section ref={ref} style={{paddingTop: "175px"}} >
       <SectionHeader title={props.experience.header} num="02." />
       <Tabs
         size="small"
@@ -87,4 +87,4 @@ export const ExperienceSection: FC<ExperienceSectionProps> = (props) => {
       </Tabs>
     </Section>
   );
-};
+});

@@ -1,13 +1,14 @@
-import React, { FC } from "react";
+import React, { forwardRef, Ref } from "react";
 
 type SectionProps = {
-    style?: {}
+    style?: {},
+    children?: any,
 };
 
-export const Section: FC<SectionProps> = (props) => {
+export const Section = forwardRef((props: SectionProps, ref: Ref<HTMLDivElement>) => {
     return (
-        <div style={{width: "80%", margin: "auto", marginTop: "150px", ...props.style}}>
+        <div ref={ref} style={{width: "80%", margin: "auto", marginTop: "150px", ...props.style}}>
             {props.children}
         </div>
     );
-};
+});

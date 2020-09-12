@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { forwardRef, Ref } from "react";
 import { Section, SectionHeader, StyledTitle, StyledParagraph } from "../common";
 import { Table } from "antd";
 
@@ -37,9 +37,9 @@ type ContactSectionProps = {
     }
 };
 
-export const ContactSection: FC<ContactSectionProps> = (props) => {
+export const ContactSection = forwardRef((props: ContactSectionProps, ref: Ref<HTMLDivElement>) => {
     return (
-        <Section>
+        <Section ref={ref} style={{paddingTop: "100px"}} >
             <SectionHeader title={props.contacts.header} num="05." />
             <StyledTitle>{props.contacts.subheader}</StyledTitle>
             <StyledParagraph>{props.contacts.summary}</StyledParagraph>
@@ -54,4 +54,4 @@ export const ContactSection: FC<ContactSectionProps> = (props) => {
             />
         </Section>
     );
-};
+});

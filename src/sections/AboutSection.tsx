@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, forwardRef, Ref } from "react";
 import { Descriptions, Badge } from "antd";
 import { SectionHeader, StyledParagraph, StyledText } from "../common";
 import { Section } from "../common/textBodies/Section";
@@ -32,9 +32,9 @@ type AboutSectionProps = {
   }
 };
 
-export const AboutSection: FC<AboutSectionProps> = (props) => {
+export const AboutSection = forwardRef((props: AboutSectionProps, ref: Ref<HTMLDivElement>) => {
   return (
-    <Section>
+    <Section ref={ref} style={{paddingTop: "100px"}} >
       <Descriptions
         title={ <SectionHeader title={props.about.header} num="01." /> }
       >
@@ -60,4 +60,4 @@ export const AboutSection: FC<AboutSectionProps> = (props) => {
       </Descriptions>
     </Section>
   );
-}
+});

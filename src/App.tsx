@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, createRef, RefObject } from 'react';
 import { Layout } from 'antd';
 import { SiteMenu } from './SiteMenu';
 import { ContactSidebar } from './ContactSidebar';
@@ -8,20 +8,35 @@ import { ExperienceSection } from './sections/ExperienceSection';
 import { ContactSection } from './sections/ContactSection';
 
 const App: FC = () => {
+
+  const sectionList = links.map(({title, link}) => link);
+  sectionList.push("#welcome");
+  const sectionReducer = (accumulator: {[key: string]: RefObject<HTMLDivElement>}, val: string) => {
+    accumulator[val] = createRef<HTMLDivElement>()
+    return accumulator
+  };
+  const sectionRefMap = sectionList.reduce(sectionReducer, {});
+
+  const scrollIntoView = (obj: {key: string}) => {
+    sectionRefMap[obj.key]!.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <Layout>
       <Layout.Header style={{padding: "0px", position: "fixed", width: "100%", zIndex: 100}} >
-        <SiteMenu links={links} />
+        <SiteMenu links={links} onSectionClick={scrollIntoView}/>
       </Layout.Header>
       <Layout>
         <ContactSidebar contacts={contacts.list} />
-        <Layout.Content style={{margin: "175px 125px 50px 125px", alignItems: "end"}} >
-          <WelcomeSection welcome={welcome} />
-          <AboutSection about={about} />
-          <ExperienceSection experience={experience} />
-          <SkillsSection skills={skills} ratings={ratings} />
-          <ProjectSection projects={projects} />
-          <ContactSection contacts={contacts} />
+        <Layout.Content style={{margin: "0px 125px 50px 125px", alignItems: "end"}} >
+          <WelcomeSection welcome={welcome} ref={sectionRefMap["#welcome"]}/>
+          <AboutSection about={about} ref={sectionRefMap["#about"]}/>
+          <ExperienceSection experience={experience} ref={sectionRefMap["#jobs"]}/>
+          <SkillsSection skills={skills} ratings={ratings} ref={sectionRefMap["#skills"]}/>
+          <ProjectSection projects={projects} ref={sectionRefMap["#projects"]} />
+          <ContactSection contacts={contacts} ref={sectionRefMap["#contact"]}/>
         </Layout.Content>
       </Layout>
     </Layout>

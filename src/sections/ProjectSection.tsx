@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { forwardRef, Ref } from "react";
 import { Section, SectionHeader, StyledText } from "../common";
 import { Empty } from "antd";
 
@@ -9,9 +9,9 @@ type ProjectSectionProps = {
   }
 };
 
-export const ProjectSection: FC<ProjectSectionProps> = (props) => {
+export const ProjectSection = forwardRef((props: ProjectSectionProps, ref: Ref<HTMLDivElement>) => {
     return (
-        <Section>
+        <Section ref={ref} style={{paddingTop: "100px"}} >
             <SectionHeader title={props.projects.header} num="04."/>
             <Empty
                 description={<StyledText>{props.projects.underConstruction}</StyledText>}
@@ -19,4 +19,4 @@ export const ProjectSection: FC<ProjectSectionProps> = (props) => {
             />
         </Section>
     )
-};
+});

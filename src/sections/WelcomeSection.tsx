@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { Ref, forwardRef } from "react";
 import { Row, Typography } from "antd";
 import { colors, StyledParagraph, StyledTitle } from "../common";
 
@@ -11,9 +11,9 @@ type WelcomeSectionProps = {
   }
 }
 
-export const WelcomeSection: FC<WelcomeSectionProps> = (props) => {
+export const WelcomeSection = forwardRef((props: WelcomeSectionProps, ref: Ref<HTMLDivElement>) => {
   return (
-    <div>
+    <div ref={ref} style={{"paddingTop": "175px"}}>
       <Row>
         <Typography.Text
           style={{fontFamily: "'Roboto Mono'", fontSize: "18px", color: colors.highlight}}
@@ -32,4 +32,4 @@ export const WelcomeSection: FC<WelcomeSectionProps> = (props) => {
       </Row>
     </div>
   );
-}
+});
