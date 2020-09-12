@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { Layout } from 'antd';
+import { SiteMenu } from './SiteMenu';
+import { ContactSidebar } from './ContactSidebar';
+import { contacts, links, welcome, about, experience, ratings, skills, projects } from './common';
+import { WelcomeSection, AboutSection, SkillsSection, ProjectSection } from './sections';
+import { ExperienceSection } from './sections/ExperienceSection';
+import { ContactSection } from './sections/ContactSection';
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Layout.Header style={{padding: "0px", position: "fixed", width: "100%", zIndex: 100}} >
+        <SiteMenu links={links} />
+      </Layout.Header>
+      <Layout>
+        <ContactSidebar contacts={contacts.list} />
+        <Layout.Content style={{margin: "175px 125px 50px 125px", alignItems: "end"}} >
+          <WelcomeSection welcome={welcome} />
+          <AboutSection about={about} />
+          <ExperienceSection experience={experience} />
+          <SkillsSection skills={skills} ratings={ratings} />
+          <ProjectSection projects={projects} />
+          <ContactSection contacts={contacts} />
+        </Layout.Content>
+      </Layout>
+    </Layout>
   );
-}
+};
 
 export default App;
