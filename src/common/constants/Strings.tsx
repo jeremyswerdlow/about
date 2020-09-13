@@ -47,7 +47,7 @@ export const about = {
     + "product my customers can rely on that can be easily monitored and extended by "
     + "others as well.",
     "After graduating Earlham College in 2018, I joined Bloomberg LP's engineering "
-    + "team in NYC. first providing machine learning models to enrich legal documents, "
+    + "team in NYC, first providing machine learning models to enrich legal documents, "
     + "then designing and implementing a scalable framework for tests involving "
     + "containerization as part of continuous integration in an isolated environment.",
     "More recently I have joined Amazon Music's development team, helping to work on "
@@ -67,7 +67,7 @@ export const about = {
 };
 
 export const experience = {
-  header: "Where I've Worked",
+  header: "Experience",
   jobs: [
     {
       company: "Amazon Music",
@@ -156,12 +156,12 @@ export const skills = {
 };
 
 export const projects = {
-  header: "Projects",
+  header: "Portfolio",
   underConstruction: "This section is under construction. Please check back later!"
 }
 
 export const contacts = {
-  header: "Next Steps",
+  header: "Contact",
   subheader: "Say Hello!",
   summary: "I always love to hear from other people interested or involved in tech. "
   + "Please make use of each of the below means of contact to reach out, whether it's "
