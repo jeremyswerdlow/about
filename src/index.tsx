@@ -11,7 +11,7 @@ import { NotFoundPage } from './NotFoundPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/about">
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="*" component={NotFoundPage} />
