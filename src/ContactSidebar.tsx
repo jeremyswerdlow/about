@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Layout, Button } from "antd";
+import { Button, Layout } from "antd";
 import styled from "styled-components";
 
 const CenteredVerticalLine = styled.div`

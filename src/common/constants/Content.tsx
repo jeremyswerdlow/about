@@ -1,10 +1,23 @@
+import React from "react";
 import {
+  BranchesOutlined,
+  ClockCircleOutlined,
+  CodeOutlined,
+  DashboardOutlined,
   GithubOutlined,
+  HomeOutlined,
   LinkedinFilled,
   MailOutlined,
   MobileOutlined,
+  SyncOutlined,
 } from "@ant-design/icons";
-import React from "react";
+
+export enum projectStatus {
+  notStarted = "default",
+  inProgress = "processing",
+  stable = "success",
+  blocked = "warning",
+}
 
 export const links = [
   {
@@ -152,12 +165,82 @@ export const experience = {
 
 export const skills = {
   header: "Skills",
-  ratingInfo: "Skills graded on a scale of 1-5, from (1: beginner) to (5: proficient)",
+  ratingInfo: "Skills are self-graded on a scale of 1-5, from (1: beginner) to "
+  + "(5: proficient).",
 };
 
 export const projects = {
   header: "Portfolio",
-  underConstruction: "This section is under construction. Please check back later!"
+  buttonText: "See the code here",
+  projectList: [
+    {
+      title: "Grook",
+      summary: "Grook is a Turing complete (TC) language meant to be a parody of the "
+      + "Ook programming language, but instead of it being so easy a monkey could "
+      + "write it, it's so that a Groot can.",
+      link: "https://github.com/jeremyswerdlow/grook",
+      image: <CodeOutlined />,
+      status: projectStatus.stable,
+    },
+    {
+      title: "Dynamic Decision Trees",
+      summary: "Decision Trees are an easily understood machine learning algorithm "
+      + "based on splitting data depending on a calculated value at each level of the "
+      + "tree, such that the data grouped by the split is most similar. This allows "
+      + "for then using the model to predict the outcome of a similarly formatted "
+      + "occurrence of data. This project extends the functionality of these trees, "
+      + "allowing for new data to be added even after the initial training of the tree "
+      + "has completed. By doing this, the costly operation of training does not "
+      + "reoccur, but instead is delayed while still benefitting from newer data.",
+      link: "https://github.com/jeremyswerdlow/Dynamic-Decision-Trees",
+      image: <BranchesOutlined />,
+      status: projectStatus.stable
+    },
+    {
+      title: "Personal Website",
+      summary: "This website was built after starting a new position which involved "
+      + "more front end development than I had done in previous experiences. It is "
+      + "written in Typescript with React and the Ant Design framework.",
+      link: "https://github.com/jeremyswerdlow/about",
+      image: <HomeOutlined />,
+      status: projectStatus.stable,
+    },
+    {
+      title: "Isolation Clock",
+      summary: "This was a way to track when I'd interacted with people during Covid. "
+      + "It uses Docker to run a PostgreSQL database for storing the data, with Python "
+      + "3 using Flask for the frontend API interactions. This does not provide any "
+      + "user interface, but instead makes use of Python's built in CLI tooling, "
+      + "argparse.",
+      link: "https://github.com/jeremyswerdlow/isolation-clock",
+      image: <ClockCircleOutlined />,
+      status: projectStatus.notStarted,
+    },
+    {
+      title: "Random Shuffle",
+      summary: "Just a simple project I threw together to allow people to get a random "
+      + "permutation of a set of options that uses all the options. Useful for teams "
+      + "trying to decide an order, or shuffling a playlist of music, whatever you "
+      + "need. Written in Typescript with React and Material UI.",
+      link: "https://github.com/jeremyswerdlow/random-shuffle",
+      image: <SyncOutlined />,
+      status: projectStatus.stable,
+    },
+    {
+      title: "OSRS Skills Dashboard",
+      summary: "Old School Runescape is an MMORPG meant to capture the nostalgia of "
+      + "the Runescape prior to its Evolution of Combat transformation. While this "
+      + "provides an enjoyable and fun reminder of a game I love, its website leaves "
+      + "much to be desired in terms of tracking your progress towards goals. This "
+      + "site provides a more modern delivery of the skills tracked on the highscores "
+      + "not just for OSRS itself, but for private servers as well. It relies on React "
+      + "written in Typescript with Ant Design for its interface, while scraping data "
+      + "from the respective websites themselves with Axios and Cheerio.",
+      link: "https://github.com/jeremyswerdlow/rs-skills-dashboard",
+      image: <DashboardOutlined />,
+      status: projectStatus.stable,
+    },
+  ]
 }
 
 export const contacts = {
@@ -172,21 +255,25 @@ export const contacts = {
       "icon": <MailOutlined />,
       "link": "mailto:jeremyjswerdlow@gmail.com",
       "text": "jeremy.j.swerdlow@gmail.com",
+      "key": "email",
     }, {
       "title": "Phone",
       "icon": <MobileOutlined />,
       "link": "tel:+1-207-712-1044",
       "text": "207 712 1044",
+      "key": "phone",
     }, {
       "title": "LinkedIn",
       "icon": <LinkedinFilled />,
       "link": "https://linkedin.com/in/jeremyswerdlow",
       "text": "/in/jeremyswerdlow",
+      "key": "linkedin",
     }, {
       "title": "GitHub",
       "icon": <GithubOutlined />,
       "link": "https://github.com/jeremyswerdlow",
       "text": "github.com/jeremyswerdlow",
+      "key": "github",
     },
   ]
 };

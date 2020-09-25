@@ -1,8 +1,16 @@
 import React, { FC, createRef, RefObject } from 'react';
 import { Layout } from 'antd';
-import { SiteMenu } from './SiteMenu';
+import {
+  contacts,
+  links,
+  welcome,
+  about,
+  experience,
+  ratings,
+  skills,
+  projects
+} from './common';
 import { ContactSidebar } from './ContactSidebar';
-import { contacts, links, welcome, about, experience, ratings, skills, projects } from './common';
 import {
   AboutSection,
   ContactSection,
@@ -11,6 +19,7 @@ import {
   SkillsSection,
   WelcomeSection,
 } from './sections';
+import { SiteMenu } from './SiteMenu';
 
 const App: FC = () => {
 

@@ -5,13 +5,13 @@ export const ratings = {
     "Golang": 4,
     "Groovy": 4,
     "Haskell": 3,
-    "Java": 5,
+    "Java": 4,
     "JavaScript": 3,
     "Python": 5,
-    "Ruby": 4,
+    "Ruby": 3,
     "Scala": 2,
-    "Shell": 4,
-    "TypeScript": 4,
+    "Shell": 3,
+    "TypeScript": 3,
   },
   "Frameworks": {
     "Flask": 5,
@@ -31,8 +31,8 @@ export const ratings = {
     "Terraform": 4,
   },
   "Libraries": {
-    "Pandas": 5,
-    "Scikit-learn": 4,
+    "Pandas": 4,
+    "Scikit-learn": 3,
   },
   "Concepts": {
     "12 Factor App": 3,
@@ -41,5 +41,5 @@ export const ratings = {
     "Containerization": 4,
     "Microservice Architecture": 4,
     "Serverless Architecture": 4,
-  }
+  },
 };

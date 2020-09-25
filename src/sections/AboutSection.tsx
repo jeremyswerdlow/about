@@ -1,7 +1,6 @@
 import React, { FC, forwardRef, Ref } from "react";
 import { Descriptions, Badge } from "antd";
-import { SectionHeader, StyledParagraph, StyledText } from "../common";
-import { Section } from "../common/textBodies/Section";
+import { Section, SectionHeader, StyledParagraph, StyledText } from "../common";
 
 type AboutBodyProps = {
   paragraphs: string[]

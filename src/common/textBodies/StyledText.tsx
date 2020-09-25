@@ -4,12 +4,19 @@ import { colors } from "..";
 
 type StyledParagraphProps = {
   style?: {}
+  ellipsis?: boolean
 };
 
 export const StyledParagraph: FC<StyledParagraphProps> = (props) => {
   return (
     <Typography.Paragraph
-      style={{fontFamily: "'Roboto'", fontSize: "16px", color: colors.secondary, ...props.style}}
+      ellipsis={props.ellipsis}
+      style={{
+        color: colors.secondary,
+        fontFamily: "'Roboto'",
+        fontSize: "16px",
+        ...props.style,
+      }}
     >
       {props.children}
     </Typography.Paragraph>
@@ -23,7 +30,12 @@ type StyledTextProps = {
 export const StyledText: FC<StyledTextProps> = (props) => {
   return (
     <Typography.Text
-      style={{fontFamily: "'Roboto'", fontSize: "14px", color: colors.secondary, ...props.style}}
+      style={{
+        color: colors.secondary,
+        fontFamily: "'Roboto'",
+        fontSize: "14px",
+        ...props.style,
+      }}
     >
       {props.children}
     </Typography.Text>
@@ -37,7 +49,12 @@ type StyledTitleProps = {
 export const StyledTitle: FC<StyledTitleProps> = (props) => {
   return (
     <Typography.Title
-      style={{fontFamily: "'Roboto'", fontSize: "64px", color: colors.primary, ...props.style}}
+      style={{
+        color: colors.primary,
+        fontFamily: "'Roboto'",
+        fontSize: "64px",
+        ...props.style,
+      }}
     >
       {props.children}
     </Typography.Title>

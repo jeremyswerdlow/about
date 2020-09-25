@@ -1,6 +1,12 @@
 import React, { FC } from "react";
-import { Section, SectionHeader, colors, StyledParagraph, ClearTextButton } from "./common";
 import { WarningOutlined } from "@ant-design/icons";
+import {
+  ClearTextButton,
+  colors,
+  Section,
+  SectionHeader,
+  StyledParagraph
+} from "./common";
 
 type NotFoundPageProps = {
 

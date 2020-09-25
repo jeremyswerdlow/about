@@ -1,6 +1,6 @@
 import React, { FC, forwardRef, Ref } from "react";
-import { Tabs, Row, Divider, Badge, List } from "antd";
-import { colors, SectionHeader, Section, StyledText, StyledParagraph } from "../common";
+import { Badge, Divider, List, Row, Tabs } from "antd";
+import { colors, Section, SectionHeader, StyledParagraph, StyledText } from "../common";
 
 type StyledJobProps = {
   job: {

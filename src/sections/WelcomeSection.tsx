@@ -1,4 +1,4 @@
-import React, { Ref, forwardRef } from "react";
+import React, { forwardRef, Ref } from "react";
 import { Row, Typography } from "antd";
 import { colors, StyledParagraph, StyledTitle } from "../common";
 

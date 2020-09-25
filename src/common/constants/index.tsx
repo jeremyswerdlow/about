@@ -1,3 +1,3 @@
 export * from "./Colors";
+export * from "./Content";
 export * from "./Ratings";
-export * from "./Strings";

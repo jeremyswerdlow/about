@@ -1,6 +1,6 @@
-import React, { Ref, forwardRef } from "react";
-import { Section, SectionHeader, StyledParagraph } from "../common";
-import { Rate, Col, Row, Divider } from "antd";
+import React, { forwardRef, Ref } from "react";
+import { Col, Divider, List, Rate, Row } from "antd";
+import { Section, SectionHeader, StyledText } from "../common";
 
 type SkillsSectionProps = {
   skills: {
@@ -19,29 +19,20 @@ export const SkillsSection = forwardRef((props: SkillsSectionProps, ref: Ref<HTM
     <Section ref={ref} style={{paddingTop: "100px"}} >
       <SectionHeader title={props.skills.header} num="03." />
       {
-        Object.entries(props.ratings).map(([skillGroup, groupRatings]) =>
-        <div key={skillGroup}>
-          <Divider orientation="right">{skillGroup}</Divider>
-          <Row>
-            {
-              Object.entries(groupRatings).map(([name, rating]) =>
-                <Col
-                  key={name}
-                  style={{
-                    width: "calc(100%/3)",
-                    marginBottom: "25px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
-                >
-                  <StyledParagraph style={{width: "135px", margin: "0px auto"}}>{name}</StyledParagraph>
-                  <Rate style={{margin: "auto"}} disabled defaultValue={rating}/>
-                </Col>
-              )
-            }
-          </Row>
-        </div>
+        Object.entries(props.ratings).map( ([skillGroup, groupRatings]) =>
+          <div key={skillGroup}>
+            <Divider orientation="right">{skillGroup}</Divider>
+            <List
+              dataSource={Object.entries(groupRatings)}
+              grid={{ gutter: 16, xs: 1, sm: 1, md: 2, lg: 3, xl: 3, xxl: 8 }}
+              renderItem={ ([ name, rating ]) => (
+                <List.Item><Col>
+                  <Row><StyledText style={{ fontSize: "14px" }}>{name}</StyledText></Row>
+                  <Row><Rate disabled defaultValue={rating} /></Row>
+                </Col></List.Item>
+              )}
+            />
+          </div>
         )
       }
     </Section>

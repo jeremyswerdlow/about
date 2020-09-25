@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref } from "react";
-import { Section, SectionHeader, StyledTitle, StyledParagraph } from "../common";
 import { Table } from "antd";
+import { Section, SectionHeader, StyledParagraph, StyledTitle } from "../common";
 
 type alignment = "right" | "left" | "center" | undefined
 
