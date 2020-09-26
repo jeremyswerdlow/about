@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Button, Col, Modal } from "antd";
-import { colors, projects, StyledParagraph, StyledTitle } from "../common";
+import { Badge, Button, Col, Descriptions, Modal } from "antd";
+import { colors, projects, projectStatus, StyledParagraph, StyledTitle } from "../common";
 
 type ProjectModalProps = {
   onClose: () => void,
@@ -11,6 +11,7 @@ type ProjectModalProps = {
     summary: string,
     link: string,
     image: React.ReactNode,
+    status: projectStatus,
   },
 };
 
@@ -24,16 +25,24 @@ export const ProjectModal: FC<ProjectModalProps> = (props) => {
 
   return (
     <Modal
+      centered
       footer={null}
       onCancel={props.onClose}
       title={title}
       visible={props.visible}
-      width="60%"
+      width="80%"
     >
       <Col>
-        <StyledParagraph style={{ fontSize: "14px", paddingBottom: "10px" }}>
-          {props.projectInfo.summary}
-        </StyledParagraph>
+        <Descriptions size="small">
+          <Descriptions.Item label="Status" span={3}>
+            <Badge status={props.projectInfo.status} />
+          </Descriptions.Item>
+          <Descriptions.Item label="Description" span={3}>
+            <StyledParagraph style={{ fontSize: "14px", paddingBottom: "10px" }}>
+              {props.projectInfo.summary}
+            </StyledParagraph>
+          </Descriptions.Item>
+        </Descriptions>
         <Button
           block
           href={props.projectInfo.link}

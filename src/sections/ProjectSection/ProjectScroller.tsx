@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Card, List } from "antd";
-import { StyledParagraph } from "../../common";
+import { projectStatus, StyledParagraph } from "../../common";
 import { ProjectModal } from "../../modals";
 
 type ProjectScrollItemProps = {
@@ -9,6 +9,7 @@ type ProjectScrollItemProps = {
     summary: string,
     link: string,
     image: {},
+    status: projectStatus,
   }
 };
 
@@ -60,6 +61,7 @@ type ProjectScrollerProps = {
     summary: string,
     link: string,
     image: {},
+    status: projectStatus,
   }[],
 };
 
