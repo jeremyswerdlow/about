@@ -1,6 +1,12 @@
 import React, { FC } from "react";
 import { Badge, Button, Col, Descriptions, Modal } from "antd";
-import { colors, projects, projectStatus, StyledParagraph, StyledTitle } from "../common";
+import {
+  colors,
+  projects,
+  projectStatus,
+  StyledParagraph,
+  StyledTitle
+} from "../../common";
 
 type ProjectModalProps = {
   onClose: () => void,

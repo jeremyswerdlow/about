@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Card, List } from "antd";
 import { projectStatus, StyledParagraph } from "../../common";
-import { ProjectModal } from "../../modals";
+import { ProjectModal } from ".";
 
 type ProjectScrollItemProps = {
   project: {

@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref } from "react";
 import { projectStatus, Section, SectionHeader } from "../../common";
-import { ProjectScroller } from "./ProjectScroller";
+import { ProjectScroller } from ".";
 
 type ProjectSectionProps = {
   projects: {

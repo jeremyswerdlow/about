@@ -23,7 +23,7 @@ import { SiteMenu } from './SiteMenu';
 
 const App: FC = () => {
 
-  const sectionList = links.map(({title, link}) => link);
+  const sectionList = links.map(({ link }) => link);
   sectionList.push("#welcome");
   const sectionReducer = (
     accumulator: {[key: string]: RefObject<HTMLDivElement>}, val: string
