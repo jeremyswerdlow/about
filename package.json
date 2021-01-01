@@ -4,28 +4,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/colors": "^4.0.5",
-    "@ant-design/icons": "^4.2.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.54",
-    "@types/react": "^16.9.48",
-    "@types/react-bootstrap": "^0.32.22",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.5",
-    "@types/styled-components": "^5.1.2",
-    "antd": "^4.6.3",
-    "bootstrap": "^4.5.2",
-    "fontsource-roboto": "^3.0.3",
-    "fontsource-roboto-mono": "^3.0.3",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
+    "react-icons": "^4.1.0",
+    "react-modal": "^3.12.1",
+    "react-rating": "^2.0.5",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "styled-components": "^5.1.1",
+    "react-scripts": "^4.0.1",
+    "react-table-6": "^6.11.0",
+    "react-vertical-timeline-component": "^3.3.1",
     "typescript": "^3.9.7"
   },
   "scripts": {
@@ -52,6 +42,12 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^12.12.54",
+    "@types/react": "^16.9.48",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-modal": "^3.10.6",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-vertical-timeline-component": "^3.0.0",
     "gh-pages": "^3.1.0"
   }
 }
