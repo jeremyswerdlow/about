@@ -1,2 +1,3 @@
-export * from './constants';
-export * from './textBodies';
+export * from "./InfoBox";
+export * from "./Paragraph";
+export * from "./Section";
