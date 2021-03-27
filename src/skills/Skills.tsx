@@ -11,7 +11,6 @@ import { colors, skills } from "../constants";
 const SkillBody = styled.div``;
 
 const SkillSection = styled(Section)`
-  width: 75%;
   margin: auto;
 `;
 

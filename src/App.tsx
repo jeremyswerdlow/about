@@ -14,7 +14,6 @@ import { colors } from "./constants";
 const AppBody = styled.div`
   width: 100%;
   height: 100%;
-  margin: 0px;
   background-color: rgb(25, 25, 35);
 `;
 
@@ -90,25 +89,26 @@ const App: FC = () => {
 
   const links = [
     <UpArrowButton
+      key="top-link"
       showUpArrow={showUpArrow}
       id="top-link"
       onClick={() => scrollTo(introRef)}
     >
       <FaAngleDoubleUp style={{ padding: "10px 12px" }} />
     </UpArrowButton>,
-    <LinkButton id="about-link" onClick={() => scrollTo(aboutRef)}>
+    <LinkButton key="about-link" id="about-link" onClick={() => scrollTo(aboutRef)}>
       About Me
     </LinkButton>,
-    <LinkButton id="experiences-link" onClick={() => scrollTo(experienceRef)}>
+    <LinkButton key="experiences-link" id="experiences-link" onClick={() => scrollTo(experienceRef)}>
       Experiences
     </LinkButton>,
-    <LinkButton id="skills-link" onClick={() => scrollTo(skillRef)}>
+    <LinkButton key="skills-link" id="skills-link" onClick={() => scrollTo(skillRef)}>
       Skills
     </LinkButton>,
-    <LinkButton id="portfolio-link" onClick={() => scrollTo(portfolioRef)}>
+    <LinkButton key="portfolio-link" id="portfolio-link" onClick={() => scrollTo(portfolioRef)}>
       Portfolio
     </LinkButton>,
-    <LinkButton id="contact-link" onClick={() => scrollTo(contactRef)}>
+    <LinkButton key="contact-link" id="contact-link" onClick={() => scrollTo(contactRef)}>
       Contact
     </LinkButton>,
   ];

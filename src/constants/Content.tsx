@@ -84,7 +84,7 @@ export const experience = {
       start: "Jul 2020",
       end: "Present",
       points: [
-        "Provide more than 50,000 artists and labels with information and tools to " +
+        "Provide more than 60,000 artists and labels with information and tools to " +
           "connect with fans based in a cross-platform application supported by a " +
           "serverless backend built with Amazon Web Services's API Gateway, Elastic " +
           "Container Service, and Lambda with DynamoDB, being monitored using " +
@@ -92,6 +92,8 @@ export const experience = {
         "Notify over 55,000,000 fans when their favorite artists are livestreaming by " +
           "allowing musicians to link their Twitch accounts to their Amazon Music " +
           "profiles.",
+        "Allow artists to display their creativity outside of just their music through " +
+          "curated collections of merchandise, displayed as part of their detail page.",
       ],
       icon: <FaMusic />,
     },

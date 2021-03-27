@@ -10,7 +10,7 @@ type SectionProps = {
 
 const StyledSection = styled.div`
   height: 100%;
-  width: 100%;
+  width: 80%;
 
   font-family: Roboto;
   background-color: transparent;

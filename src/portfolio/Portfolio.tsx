@@ -9,7 +9,6 @@ import { ProjectModal } from "./ProjectModal";
 const PortfolioBody = styled.div``;
 
 const PortfolioSection = styled(Section)`
-  width: 70%;
   margin: auto;
 `;
 
@@ -75,8 +74,8 @@ export const Portfolio = forwardRef(
           <div
             style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
           >
-            {projects.projectList.map((project) => (
-              <PortfolioCard onClick={() => onProjectClicked(project)}>
+            {projects.projectList.map((project, index) => (
+              <PortfolioCard onClick={() => onProjectClicked(project)} key={index}>
                 <div
                   style={{
                     width: "100%",
