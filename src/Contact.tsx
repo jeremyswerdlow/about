@@ -4,10 +4,11 @@ import React, { forwardRef, Ref } from "react";
 import { Section } from "./common";
 import { colors, contacts } from "./constants";
 
-const ContactBody = styled.div``;
+const ContactBody = styled.div`
+  min-height: 100vh;
+`;
 
 const ContactSection = styled(Section)`
-  width: 60%;
   margin: auto;
 
   font-family: Roboto;
@@ -61,8 +62,8 @@ export const Contact = forwardRef(
         <ContactSection sectionId={props.sectionId} header={contacts.header}>
           <ContactHeader>{contacts.subheader}</ContactHeader>
           <ContactParagraph>{contacts.summary}</ContactParagraph>
-          {contacts.list.map((contact) => (
-            <ContactRow onClick={() => window.open(contact.link)}>
+          {contacts.list.map((contact, index) => (
+            <ContactRow key={index} onClick={() => window.open(contact.link)}>
               {contact.icon}
               {contact.text}
             </ContactRow>

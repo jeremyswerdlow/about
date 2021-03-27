@@ -4,18 +4,21 @@ import React, { FC } from "react";
 import { colors } from "../constants";
 
 type SectionProps = {
+  hideBar?: boolean;
   sectionId?: string;
   header?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const StyledSection = styled.div`
   height: 100%;
-  width: 100%;
+
+  width: 80%;
+  max-width: 1200px;
 
   font-family: Roboto;
   background-color: transparent;
 
-  padding-bottom: 100px;
+  padding-top: 15vh;
 `;
 
 const StyledDivider = styled.h2`
@@ -62,12 +65,14 @@ const StyledSectionBody = styled.div`
 export const Section: FC<SectionProps> = (props) => {
   return (
     <StyledSection {...props}>
-      <StyledDivider>
-        {props.sectionId && (
-          <StyledSectionNumber>{props.sectionId}</StyledSectionNumber>
-        )}
-        <StyledSectionTitle>{props.header}</StyledSectionTitle>
-      </StyledDivider>
+      {!props.hideBar && (
+        <StyledDivider>
+          {props.sectionId && (
+            <StyledSectionNumber>{props.sectionId}</StyledSectionNumber>
+          )}
+          <StyledSectionTitle>{props.header}</StyledSectionTitle>
+        </StyledDivider>
+      )}
       <StyledSectionBody>{props.children}</StyledSectionBody>
     </StyledSection>
   );

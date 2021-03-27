@@ -97,8 +97,9 @@ export const ExperienceModal: FC<ExperienceModalProps> = (props) => {
           &#44;&nbsp;
           <CompanyLocation>{props.job.location}</CompanyLocation>
         </ModalSubHeader>
-        {props.job.points.map((point) => (
+        {props.job.points.map((point, index) => (
           <div
+            key={index}
             style={{
               lineHeight: "1.2",
               margin: "auto",

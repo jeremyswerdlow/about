@@ -2,10 +2,10 @@
 
 This repository stores the source code for my personal website, boostrapped with
 [Create React App](https://github.com/facebook/create-react-app), and written in
-TypeScript with the [Ant Design](https://ant.design) framework. It is deployed to
-[GitHub Pages](https://pages.github.com/) using the `gh-pages` command line tool. If you
-have any suggestions or issues viewing the website, or any recommendations on how it can
-be improved, please do not hesitate to open an issue or contact me at my personal email,
+TypeScript. It is deployed to [GitHub Pages](https://pages.github.com/) using the
+`gh-pages` command line tool. If you have any suggestions or issues viewing the website,
+or any recommendations on how it can be improved, please do not hesitate to open an
+issue or contact me at my personal email,
 [jeremy.j.swerdlow@gmail.com](mailto:jeremyjswerdlow@gmail.com). Thank you!
 
 ## Code Organization

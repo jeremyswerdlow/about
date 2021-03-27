@@ -44,17 +44,17 @@ export const AboutMe = forwardRef(
         <Section
           sectionId={props.sectionId}
           header={about.header}
-          style={{ width: "70%", margin: "auto" }}
+          style={{ margin: "auto" }}
         >
-          {about.paragraphs.map((paragraph) => (
-            <AboutParagraph>{paragraph}</AboutParagraph>
+          {about.paragraphs.map((paragraph, index) => (
+            <AboutParagraph key={index}>{paragraph}</AboutParagraph>
           ))}
 
           <AboutParagraph>{about.recentSkills.summary}</AboutParagraph>
 
           <StyledSkillList>
-            {about.recentSkills.skills.map((skill) => (
-              <StyledSkillListItem>
+            {about.recentSkills.skills.map((skill, index) => (
+              <StyledSkillListItem key={index}>
                 <StyledListIcon />
                 {skill}
               </StyledSkillListItem>

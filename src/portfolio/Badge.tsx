@@ -37,11 +37,14 @@ const BadgeTypes = {
 
 const BadgeCard = styled.div`
   height: 16px;
-  border-radius: 5px;
-  padding: 3px 5px;
+  max-width: fit-content;
 
-  display: inline-flex;
+  border-radius: 5px;
+  padding: 4px 8px;
+
+  display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
 
   font-size: 12px;

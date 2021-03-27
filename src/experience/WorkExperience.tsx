@@ -13,7 +13,6 @@ import { ExperienceModal } from "./ExperienceModal";
 const WorkBody = styled.div``;
 
 const WorkSection = styled(Section)`
-  width: 80%;
   overflow-x: hidden;
   margin: auto;
 `;
@@ -96,8 +95,9 @@ export const WorkExperience = forwardRef(
             {experience.summary}
           </InfoBox>
           <VerticalTimeline layout="1-column">
-            {experience.jobs.map((job) => (
+            {experience.jobs.map((job, index) => (
               <VerticalTimelineElement
+                key={index}
                 contentStyle={{
                   background: colors.primary,
                   color: colors.background,

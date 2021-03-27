@@ -6,47 +6,66 @@ import ReactModal from "react-modal";
 import { colors, projects, ProjectStatus } from "../constants";
 import { Badge } from "./Badge";
 
-const ModalHeader = styled.h1`
-  margin: 0px;
-  width: 100%;
-  color: ${colors.primary};
-  font-family: Roboto;
+const ModalContainer = styled.div`
+  height: 80vh;
+
+  width: 80vw;
+  max-width: 1200px;
+
+  margin: auto;
+
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
+
+  font-family: Roboto;
 `;
 
-const ModalHeaderIcon = styled.span`
-  font-size: 50px;
-  margin: 0px 25px;
-  padding-top: 15px;
+const ModalIcon = styled.span`
+  font-size: 48px;
+  margin: 0px 24px;
+  padding-top: 16px;
   color: ${colors.secondary};
 `;
 
-const ModalCloseButton = styled(FaTimes)`
-  margin-left: auto;
-  height: 35px;
-  width: 35px;
+const ModalContent = styled.div`
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  font-size: 16px;
+`;
+
+const ModalBody = styled.div`
+  height: 100%;
+  padding: 5% 0px;
+  line-height: 1.6em;
+`;
+
+const ModalHeader = styled.h1`
+  width: 100%;
+
+  margin: 8px 0px;
+
+  font-family: Roboto;
+  font-size: 48px;
   color: ${colors.primary};
-  :hover {
-    cursor: pointer;
-  }
 `;
 
 const RepoLink = styled.button`
-  margin: auto;
-  position: absolute;
-  bottom: 0;
-
-  width: 55%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1.5px solid ${colors.secondary};
+  width: 456px;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  padding: 8px;
+
+  border-radius: 5px;
+  border: 1.5px solid ${colors.secondary};
 
   font-family: Roboto;
   font-size: 18px;
@@ -60,6 +79,20 @@ const RepoLink = styled.button`
     color: rgba(89, 113, 173, 0.7);
     border-color: rgba(89, 113, 173, 0.7);
     background-color: rgba(58, 58, 82, 0.2);
+  }
+`;
+
+const ModalCloseButton = styled(FaTimes)`
+  margin: 0px 24px;
+  padding-top: 16px;
+
+  font-size: 40px;
+  color: ${colors.primary};
+
+  transition: 1s ease;
+  :hover {
+    color: ${colors.highlight};
+    cursor: pointer;
   }
 `;
 
@@ -95,38 +128,19 @@ export const ProjectModal: FC<ProjectModalProps> = (props) => {
         },
       }}
     >
-      <div
-        onClick={props.onModalClose}
-        style={{
-          height: "100%",
-          width: "100%",
-          fontFamily: "Roboto",
-          userSelect: "none",
-        }}
-      >
-        <ModalHeader style={{ marginBottom: "0px" }}>
-          <ModalHeaderIcon>{props.project.image}</ModalHeaderIcon>
-          {props.project.title}
-          <ModalCloseButton onClick={props.onModalClose} />
-        </ModalHeader>
-        <div
-          style={{
-            lineHeight: "1.6",
-            margin: "auto",
-            width: "80%",
-            height: "80%",
-            fontSize: "18px",
-            position: "relative",
-          }}
-        >
+      <ModalContainer>
+        <ModalIcon>{props.project.image}</ModalIcon>
+        <ModalContent>
+          <ModalHeader>{props.project.title}</ModalHeader>
           <Badge status={props.project.status} />
-          <div style={{ marginTop: "10px" }}>{props.project.summary}</div>
+          <ModalBody>{props.project.summary}</ModalBody>
           <RepoLink onClick={() => window.open(props.project.link, "_blank")}>
             <FaGithubAlt style={{ paddingRight: "10px" }} />
             {projects.buttonText}
           </RepoLink>
-        </div>
-      </div>
+        </ModalContent>
+        <ModalCloseButton onClick={props.onModalClose} />
+      </ModalContainer>
     </ReactModal>
   );
 };
