@@ -4,7 +4,9 @@ import React, { forwardRef, Ref } from "react";
 import { Section } from "./common";
 import { colors, contacts } from "./constants";
 
-const ContactBody = styled.div``;
+const ContactBody = styled.div`
+  min-height: 100vh;
+`;
 
 const ContactSection = styled(Section)`
   margin: auto;

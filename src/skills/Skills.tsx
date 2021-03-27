@@ -17,9 +17,8 @@ const SkillSection = styled(Section)`
 const SkillGroupSection = styled(Section)`
   font-family: Roboto Mono;
   width: 100%;
-  max-width: 1575px;
   margin: auto;
-  padding-bottom: 0px;
+  padding: 0px;
 `;
 
 const StyledReactTable = styled(ReactTable)``;

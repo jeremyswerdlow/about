@@ -33,11 +33,11 @@ export enum ProjectStatus {
 export const welcome = {
   greeting: "Hey, my name's",
   name: "Jeremy Swerdlow.",
-  statement: "I deliver scalable, robust services.",
+  statement: "I deliver robust, scalable solutions.",
   summary:
     "I'm a software engineer based out of Los Angeles, CA with experience " +
-    "designing and implementing backend solutions built on serverless architecture " +
-    "to provide customers with the content they want, when they want it.",
+    "designing and implementing full stack services built on serverless " +
+    "architecture to provide customers with what they want, when they want.",
 };
 
 export const about = {

@@ -1,16 +1,25 @@
 import styled from "@emotion/styled";
 import React, { forwardRef, Ref } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 import { Paragraph } from "./common";
 import { colors, welcome } from "./constants";
 
 const IntroBody = styled.div`
   width: 80%;
-  padding: 175px 125px 100px;
+  max-width: 800px;
+  height: 100vh;
   margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: Roboto, sans-serif;
   user-select: none;
 `;
+
+const IntroContent = styled.div``;
 
 const IntroGreeting = styled.h2`
   font-weight: normal;
@@ -33,16 +42,39 @@ const IntroStatement = styled.h1`
 
 const IntroSummary = styled(Paragraph)`
   color: ${colors.accents};
-  width: 50%;
 `;
 
-export const Introduction = forwardRef((props, ref: Ref<HTMLDivElement>) => {
-  return (
-    <IntroBody ref={ref}>
-      <IntroGreeting>{welcome.greeting}</IntroGreeting>
-      <IntroName>{welcome.name}</IntroName>
-      <IntroStatement>{welcome.statement}</IntroStatement>
-      <IntroSummary>{welcome.summary}</IntroSummary>
-    </IntroBody>
-  );
-});
+const IntroGetStartedButton = styled(FaChevronDown)`
+  font-size: 32px;
+  font-weight: bolder;
+  color: ${colors.highlight};
+
+  padding-top: 24px;
+
+  cursor: pointer;
+`;
+
+type IntroductionProps = {
+  onClickGetStarted: () => void;
+};
+
+export const Introduction = forwardRef(
+  (props: IntroductionProps, ref: Ref<HTMLDivElement>) => {
+    const { onClickGetStarted } = props;
+
+    return (
+      <IntroBody ref={ref}>
+        <IntroContent>
+          <IntroGreeting>{welcome.greeting}</IntroGreeting>
+          <IntroName>{welcome.name}</IntroName>
+          <IntroStatement>{welcome.statement}</IntroStatement>
+          <IntroSummary>{welcome.summary}</IntroSummary>
+          <IntroGetStartedButton
+            onClick={onClickGetStarted}
+            className="bounce"
+          />
+        </IntroContent>
+      </IntroBody>
+    );
+  }
+);
