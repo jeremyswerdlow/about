@@ -1,34 +1,16 @@
 import styled from "@emotion/styled";
 import React, { FC } from "react";
-import { FaMinus, FaTimes } from "react-icons/fa";
-import ReactModal from "react-modal";
+import { FaMinus } from "react-icons/fa";
+import { Modal } from "../common";
 
 import { colors } from "../constants";
 
-const ModalHeader = styled.h1`
-  margin: 0px;
-  width: 100%;
-  color: ${colors.primary};
-  font-family: Roboto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const ModalSubHeader = styled.h3`
+const ModalSubHeader = styled.div`
+  font-size: 20px;
   margin: 0px 0px 10px 0px;
   width: 100%;
   color: ${colors.secondary};
   font-family: Roboto;
-`;
-
-const ModalCloseButton = styled(FaTimes)`
-  height: 35px;
-  width: 35px;
-  color: ${colors.primary};
-  :hover {
-    cursor: pointer;
-  }
 `;
 
 const CompanyLink = styled.a`
@@ -58,46 +40,27 @@ type ExperienceModalProps = {
 };
 
 export const ExperienceModal: FC<ExperienceModalProps> = (props) => {
+  const { job, modalVisible, onModalClose } = props;
+
   return (
-    <ReactModal
-      isOpen={props.modalVisible}
-      onRequestClose={props.onModalClose}
-      closeTimeoutMS={1000}
-      style={{
-        overlay: {
-          zIndex: 5,
-          backdropFilter: "blur(0.75em)",
-          backgroundColor: "rgba(0, 0, 0, 0.90)",
-        },
-        content: {
-          fontFamily: "Roboto",
-          color: colors.primary,
-          borderColor: "transparent",
-          backgroundColor: "transparent",
-        },
-      }}
+    <Modal
+      modalHeader={
+        <>
+          {job.title}
+          <ModalSubHeader>
+            <CompanyLink href={job.companyLink} target="_blank">
+              {job.company}
+            </CompanyLink>
+            &#44;&nbsp;
+            <CompanyLocation>{job.location}</CompanyLocation>
+          </ModalSubHeader>
+        </>
+      }
+      modalVisible={modalVisible}
+      onModalClose={onModalClose}
     >
-      <div
-        onClick={props.onModalClose}
-        style={{
-          height: "100%",
-          width: "100%",
-          fontFamily: "Roboto",
-          userSelect: "none",
-        }}
-      >
-        <ModalHeader>
-          {props.job.title}
-          <ModalCloseButton onClick={props.onModalClose} />
-        </ModalHeader>
-        <ModalSubHeader>
-          <CompanyLink href={props.job.companyLink} target="_blank">
-            {props.job.company}
-          </CompanyLink>
-          &#44;&nbsp;
-          <CompanyLocation>{props.job.location}</CompanyLocation>
-        </ModalSubHeader>
-        {props.job.points.map((point, index) => (
+      <div style={{ height: "100%" }}>
+        {job.points.map((point, index) => (
           <div
             key={index}
             style={{
@@ -117,6 +80,6 @@ export const ExperienceModal: FC<ExperienceModalProps> = (props) => {
           </div>
         ))}
       </div>
-    </ReactModal>
+    </Modal>
   );
 };
