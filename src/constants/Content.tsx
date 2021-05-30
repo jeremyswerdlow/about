@@ -84,15 +84,15 @@ export const experience = {
       start: "Jul 2020",
       end: "Present",
       points: [
-        "Provide more than 60,000 artists and labels with information and tools to " +
-          "connect with fans based in a cross-platform application supported by a " +
+        "Provide more than 100,000 artists and labels with information and tools to " +
+          "connect with their fans through a multi-platform application supported by a " +
           "serverless backend built with Amazon Web Services's API Gateway, Elastic " +
           "Container Service, and Lambda with DynamoDB, being monitored using " +
           "CloudWatch.",
         "Notify over 55,000,000 fans when their favorite artists are livestreaming by " +
-          "allowing musicians to link their Twitch accounts to their Amazon Music " +
+          "enabling musicians to connect their Twitch accounts to their Amazon Music " +
           "profiles.",
-        "Allow artists to display their creativity outside of just their music through " +
+        "Allow artists to display their creativity outside of just music through " +
           "curated collections of merchandise, displayed as part of their detail page.",
       ],
       icon: <FaMusic />,
@@ -107,7 +107,7 @@ export const experience = {
       points: [
         "Orchestrated machine allocation and state for more than 10,000 builds daily " +
           "across hundreds of Jenkins instances with a stateless, distributed service " +
-          "written in Python, Java and Go using Apache Kafka for queueing.",
+          "written in Python, Java and Go utilizing Apache Kafka for distributed queueing.",
         "Led design and development of a testing framekwork to simplify and optimize " +
           "user onboarding for container-driven testing with Docker and Docker " +
           "Compose in an ephemeral, isolated environment allowing for meaningful " +
