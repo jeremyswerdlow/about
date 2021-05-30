@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React, { createRef, FC } from "react";
-import { FaAngleDoubleUp } from "react-icons/fa";
+import { FaAngleDoubleUp, FaRegFileAlt } from "react-icons/fa";
 
 import { AboutMe } from "./AboutMe";
 import { Introduction } from "./Introduction";
@@ -98,6 +98,22 @@ const App: FC = () => {
       onClick={() => scrollTo(contactRef)}
     >
       Contact
+    </LinkButton>,
+    <LinkButton
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+      }}
+      key="resume-link"
+      id="resume-link"
+      onClick={() =>
+        window.open(process.env.PUBLIC_URL + "/swerdlow_jeremy_resume.pdf")
+      }
+    >
+      <FaRegFileAlt />
+      &nbsp;Resume
     </LinkButton>,
   ];
 
