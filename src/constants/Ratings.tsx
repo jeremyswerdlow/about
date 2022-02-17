@@ -14,12 +14,13 @@ export const ratings = {
     TypeScript: 4,
   },
   Frameworks: {
-    Guice: 3,
+    Guice: 4,
     Pytest: 5,
     React: 4,
     Spring: 3,
   },
   Tools: {
+    "Amazon Web Services": 4,
     Ansible: 3,
     "Apache Kafka": 4,
     Chef: 5,
