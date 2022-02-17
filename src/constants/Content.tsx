@@ -79,11 +79,15 @@ export const experience = {
     {
       company: "Amazon Music For Artists",
       companyLink: "https://artists.amazonmusic.com/",
-      title: "Software Development Engineer",
+      title: "Software Development Engineer II",
       location: "Los Angeles, California",
       start: "Jul 2020",
       end: "Present",
       points: [
+        "Architected, led development on, and launched a cloud-based service to " +
+          "recommend personalised sets of merchandise to purchase to support artists " +
+          "preferred by the customer to more than a million requests an hour across " +
+          "multiple platforms.",
         "Provide more than 100,000 artists and labels with information and tools to " +
           "connect with their fans through a multi-platform application supported by a " +
           "serverless backend built with Amazon Web Services's API Gateway, Elastic " +
